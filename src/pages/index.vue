@@ -28,7 +28,7 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss">
+<style lang="postcss">
 #map {
   height: 100vh;
   width: 100%;
