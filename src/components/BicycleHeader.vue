@@ -5,19 +5,25 @@
     <router-link to="/">
       <i-custom-mainlogo />
     </router-link>
-    <button class="header-button">
-      <i-mdi-bicycle />
-      <span>找單車</span>
-    </button>
+    <div class="flex space-x-3.5">
+      <button class="btn-white" @click="switchState = 'bicycle'">
+        <i-mdi-bicycle class="mr-1" />
+        <span>找單車</span>
+      </button>
+      <button class="btn-white" @click="switchState = 'route'">
+        <i-faSolid-route class="mr-1" />
+        <span>找路線</span>
+      </button>
+      <button class="btn-white" @click="switchState = 'attractions'">
+        <i-fa-umbrella class="mr-1" />
+        <span>找景點</span>
+      </button>
+    </div>
   </header>
 </template>
-<script setup></script>
+<script setup>
+import { inject } from "vue";
+const switchState = inject("switchState");
+</script>
 
-<style lang="postcss">
-.header-button {
-  @apply bg-white hover:bg-cyan-600;
-  > span {
-    color: aqua;
-  }
-}
-</style>
+<style lang="postcss"></style>

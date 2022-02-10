@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHashHistory } from "vue-router";
 import routes from "virtual:generated-pages";
-import "@/assets/tailwind.css";
+import "./index.css";
 
 const router = createRouter({
   history: createWebHashHistory(),

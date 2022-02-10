@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         "smear-green": "rgb(115, 128, 71)",
+        "border-smear-green": "#A4B375",
       },
     },
   },

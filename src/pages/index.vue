@@ -1,11 +1,29 @@
 <template>
-  <div id="map"></div>
+  <main class="relative">
+    <div id="map" class="h-screen w-full" />
+    <div class="search-wrapper" v-if="switchState!= ''">
+      {{switchState}}
+      <template v-if="switchState == 'bicycle'">
+        <Bicycle/>
+      </template>
+      <template v-else-if="switchState == 'route'">
+        <Route/>
+      </template>
+      <template v-else-if="switchState == 'attractions'">
+        <Attractions/>
+      </template>
+
+    </div>
+  </main>
 </template>
 
 <script setup>
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { onMounted } from "vue";
+import { onMounted,inject } from "vue";
+
+const switchState = inject("switchState");
+
 onMounted(() => {
   const map = L.map("map").setView([51.505, -0.09], 13);
   L.tileLayer(
@@ -20,6 +38,7 @@ onMounted(() => {
       accessToken: import.meta.env.VITE_API_ACCESSTOKEN,
     }
   ).addTo(map);
+
   var marker = L.marker([51.5, -0.09]).addTo(map);
   var popup = L.popup()
     .setLatLng([51.513, -0.09])
@@ -29,8 +48,8 @@ onMounted(() => {
 </script>
 
 <style lang="postcss">
-#map {
-  height: 100vh;
-  width: 100%;
+.search-wrapper {
+  z-index: 400;
+  @apply bg-white absolute top-20 left-10 rounded-lg drop-shadow-lg w-1/5 h-2/3;
 }
 </style>

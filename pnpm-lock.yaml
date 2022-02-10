@@ -1,10 +1,15 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@iconify-json/fa': ^1.0.1
+  '@iconify-json/fa-solid': ^1.0.3
+  '@iconify-json/ic': ^1.0.8
   '@iconify-json/mdi': ^1.0.17
   '@vitejs/plugin-vue': ^2.0.0
   autoprefixer: ^10.4.2
+  axios: ^0.25.0
   eslint: ^8.8.0
+  jssha: ^3.2.0
   leaflet: ^1.7.1
   postcss: ^8.4.6
   tailwindcss: ^3.0.19
@@ -16,11 +21,16 @@ specifiers:
   vue-router: ^4.0.12
 
 dependencies:
+  axios: 0.25.0
+  jssha: 3.2.0
   leaflet: 1.7.1
   vue: 3.2.30
   vue-router: 4.0.12_vue@3.2.30
 
 devDependencies:
+  '@iconify-json/fa': 1.0.1
+  '@iconify-json/fa-solid': 1.0.3
+  '@iconify-json/ic': 1.0.8
   '@iconify-json/mdi': 1.0.17
   '@vitejs/plugin-vue': 2.1.0_vite@2.7.13+vue@3.2.30
   autoprefixer: 10.4.2_postcss@8.4.6
@@ -114,6 +124,24 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+    dev: true
+
+  /@iconify-json/fa-solid/1.0.3:
+    resolution: {integrity: sha512-bS9iiMP3yKVApgCbSG7AMrJ13vNq8kOjLxNUxuPonwcT4hEmJAgN1L5VUPfc8+gjlXMubm+x04H9WEU6OWMgwQ==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
+  /@iconify-json/fa/1.0.1:
+    resolution: {integrity: sha512-GKi6TqDX/kA4K3A4ULm7Jg2t01Sg1WQ/pRfkJOgbCvQ96Ib+2GNA50ntd6MSdhYhUddy/GPEIMvsVgWTO7vR0w==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
+  /@iconify-json/ic/1.0.8:
+    resolution: {integrity: sha512-XFaX8ajH270Pry9Q6Wp0+3YzOaDMpnuV+heEk3OxZmOH7t4PWSNYPIIycWSQ3MNl8M/ZwY585PEEu6CCeAbjyQ==}
+    dependencies:
+      '@iconify/types': 1.0.12
     dev: true
 
   /@iconify-json/mdi/1.0.17:
@@ -371,6 +399,14 @@ packages:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /axios/0.25.0:
+    resolution: {integrity: sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==}
+    dependencies:
+      follow-redirects: 1.14.8
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -1006,6 +1042,16 @@ packages:
     resolution: {integrity: sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==}
     dev: true
 
+  /follow-redirects/1.14.8:
+    resolution: {integrity: sha512-1x0S9UVJHsQprFcEC/qnNzBLcIxsjAV905f/UkQxbclCsoTWlacCNOpQa/anodLl2uaEKFhfWOvM2Qg77+15zA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: false
+
   /foreach/2.0.5:
     resolution: {integrity: sha1-C+4AUBiusmDQo6865ljdATbsG5k=}
     dev: true
@@ -1353,6 +1399,10 @@ packages:
     dependencies:
       minimist: 1.2.5
     dev: true
+
+  /jssha/3.2.0:
+    resolution: {integrity: sha512-QuruyBENDWdN4tZwJbQq7/eAK85FqrI4oDbXjy5IBhYD+2pTJyBUWZe8ctWaCkrV0gy6AaelgOZZBMeswEa/6Q==}
+    dev: false
 
   /kolorist/1.5.1:
     resolution: {integrity: sha512-lxpCM3HTvquGxKGzHeknB/sUjuVoUElLlfYnXZT73K8geR9jQbroGlSCFBax9/0mpGoD3kzcMLnOlGQPJJNyqQ==}

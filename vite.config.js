@@ -50,4 +50,20 @@ export default defineConfig({
       "@/": `${path.resolve(__dirname, "src")}/`,
     },
   },
+  server: {
+    proxy: {
+      "/v2/Basic": {
+        target: "https://link.motc.gov.tw/",
+        secure: false,
+        ws: true,
+        changeOrigin: true,
+      },
+      "/v2/Bike": {
+        target: "https://ptx.transportdata.tw/MOTC/",
+        secure: false,
+        ws: true,
+        changeOrigin: true,
+      },
+    },
+  },
 });
