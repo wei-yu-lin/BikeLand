@@ -1,18 +1,17 @@
 <template>
   <main class="relative">
     <div id="map" class="h-screen w-full" />
-    <div class="search-wrapper" v-if="switchState!= ''">
-      {{switchState}}
+    <div class="search-wrapper" v-if="switchState != ''">
+      {{ switchState }}
       <template v-if="switchState == 'bicycle'">
-        <Bicycle/>
+        <Bicycle />
       </template>
       <template v-else-if="switchState == 'route'">
-        <Route/>
+        <Route />
       </template>
       <template v-else-if="switchState == 'attractions'">
-        <Attractions/>
+        <Attractions />
       </template>
-
     </div>
   </main>
 </template>
@@ -20,7 +19,7 @@
 <script setup>
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { onMounted,inject } from "vue";
+import { onMounted, inject } from "vue";
 
 const switchState = inject("switchState");
 
@@ -50,6 +49,6 @@ onMounted(() => {
 <style lang="postcss">
 .search-wrapper {
   z-index: 400;
-  @apply bg-white absolute top-20 left-10 rounded-lg drop-shadow-lg w-1/5 h-2/3;
+  @apply bg-white absolute top-0 left-10 rounded-lg drop-shadow-lg w-1/4 h-3/4 animate-pulse;
 }
 </style>

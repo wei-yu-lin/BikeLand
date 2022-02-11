@@ -15,6 +15,6 @@ const switchState = inject("switchState");
 <style lang="postcss">
 .search-wrapper {
   z-index: 400;
-  @apply bg-white absolute top-20 left-10 rounded-lg drop-shadow-lg w-1/5 h-2/3;
+  @apply bg-white absolute top-20 left-10 rounded-lg drop-shadow-lg w-1/5 h-2/3 opacity-20
 }
 </style>
