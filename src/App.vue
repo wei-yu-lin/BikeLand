@@ -6,9 +6,10 @@
 <script setup>
 import { provide } from "vue";
 import { switchState, useBicycle } from "@/logic/common.js";
-const { qq } = useBicycle();
+const { searchBicycle, bikeLand_Bicycle } = useBicycle();
 provide("switchState", switchState);
-provide("qq", qq);
+provide("searchBicycle", searchBicycle);
+provide("bikeLand_Bicycle", bikeLand_Bicycle);
 </script>
 
 <style></style>

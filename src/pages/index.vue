@@ -2,7 +2,6 @@
   <main class="relative">
     <div id="map" class="h-screen w-full" />
     <div class="search-wrapper" v-if="switchState != ''">
-      {{ switchState }}
       <template v-if="switchState == 'bicycle'">
         <Bicycle />
       </template>
@@ -49,6 +48,9 @@ onMounted(() => {
 <style lang="postcss">
 .search-wrapper {
   z-index: 400;
-  @apply bg-white absolute top-0 left-10 rounded-lg drop-shadow-lg w-1/4 h-3/4 animate-pulse;
+  @apply bg-white absolute top-10 left-10 rounded-lg drop-shadow-lg w-1/4 h-3/4 opacity-50 transition-opacity duration-1000;
+}
+.search-wrapper:hover {
+  @apply opacity-100 transition-opacity duration-1000;
 }
 </style>

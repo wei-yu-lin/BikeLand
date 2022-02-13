@@ -5,13 +5,16 @@ const defaultFilter = "ServiceStatus eq 1";
 function formatRequestUrl(url, param) {
   const { city, ...keys } = param;
   if (city) url += `/${city}`;
-  keys.filter += ` and ${defaultFilter}`;
+  if (keys.filter) keys.filter += ` and ${defaultFilter}`;
   return (
     url +
     "?$format=JSON" +
     Object.keys(keys).reduce((resp, key) => `${resp}&$${key}=${keys[key]}`, "")
   );
 }
-
+// Bicycle
 export const getAvailability = (parmas) =>
   GET(formatRequestUrl("/Availability", parmas));
+
+export const getStation = (parmas) =>
+  GET(formatRequestUrl("/Station", parmas));
