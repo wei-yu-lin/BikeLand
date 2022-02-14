@@ -10,11 +10,12 @@ module.exports = {
         },
       },
       Animation: {
-        fallDown: 'fallDown 1s ease-in-out infinite',
+        fallDown: "fallDown 1s ease-in-out infinite",
       },
       colors: {
         "smear-green": "rgb(115, 128, 71)",
         "border-smear-green": "#A4B375",
+        "data-smear-green": "#DFE4CE",
       },
     },
   },
