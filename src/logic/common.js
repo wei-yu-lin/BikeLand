@@ -15,10 +15,11 @@ const useBicycle = () => {
         ...(await getStation({ city: condition.city })).data.map(
           (bikeStationItem) => ({
             ...bikeStationItem,
-            StationName :bikeStationItem.StationName.Zh_tw.replace(/_|ˍ/g, "").replace(
-                /YouBike1.0|YouBike2.0|iBike1.0 /g,
-                ""
-              )
+            StationName: bikeStationItem.StationName.Zh_tw.replace(
+              /_|ˍ/g,
+              ""
+            ).replace(/YouBike1.0|YouBike2.0|iBike1.0 /g, ""),
+            UpdateTime: `${new Date(bikeStationItem.UpdateTime).getHours().toString()}:${new Date(bikeStationItem.UpdateTime).getMinutes().toString()}`,
           })
         )
       );

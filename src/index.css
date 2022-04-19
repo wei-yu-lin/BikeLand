@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .btn-white {
+  .btn-header {
     @apply flex items-center
     bg-white text-smear-green font-bold
     py-1 px-3
@@ -13,4 +13,11 @@
     active:bg-smear-green/[.05]
     active:text-white;
   }
+  .btn-search-switch{
+    @apply bg-white text-[#738047] font-sans text-base
+  }
+  .btn-search-switch:focus{
+    @apply bg-[#738047] text-white
+  }
 }
+

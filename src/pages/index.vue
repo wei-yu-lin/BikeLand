@@ -1,56 +1,60 @@
+<script setup>
+import { inject, onMounted } from "vue";
+import { useLocation } from "@/logic/leaflet";
+const switchState = inject("switchState");
+
+onMounted(() => {
+  useLocation();
+});
+</script>
+
 <template>
   <main class="relative">
     <div id="map" class="h-screen w-full" />
-    <div class="search-wrapper" v-if="switchState != ''">
+
+    <div class="absolute top-10 left-10 flex space-x-10 h-[0px]">
       <template v-if="switchState == 'bicycle'">
-        <Bicycle />
+        <HeaderBicycle />
       </template>
       <template v-else-if="switchState == 'route'">
-        <Route />
+        <HeaderRoute />
       </template>
       <template v-else-if="switchState == 'attractions'">
-        <Attractions />
+        <HeaderAttractions />
       </template>
     </div>
   </main>
 </template>
 
-<script setup>
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-import { onMounted, inject } from "vue";
-
-const switchState = inject("switchState");
-
-onMounted(() => {
-  const map = L.map("map").setView([51.505, -0.09], 13);
-  L.tileLayer(
-    "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
-    {
-      attribution:
-        'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
-      id: "mapbox/streets-v11",
-      tileSize: 512,
-      zoomOffset: -1,
-      accessToken: import.meta.env.VITE_API_ACCESSTOKEN,
-    }
-  ).addTo(map);
-
-  var marker = L.marker([51.5, -0.09]).addTo(map);
-  var popup = L.popup()
-    .setLatLng([51.513, -0.09])
-    .setContent("I am a standalone popup.")
-    .openOn(map);
-});
-</script>
-
 <style lang="postcss">
-.search-wrapper {
-  z-index: 400;
-  @apply bg-white absolute top-10 left-10 rounded-lg drop-shadow-lg w-1/4 h-3/4 opacity-50 transition-opacity duration-1000;
+.geolocation {
+  padding: 15px;
+  width: 60px;
+  height: 60px;
+  @apply z-[400] flex justify-center items-center bg-[#738047] rounded-full hover:bg-[#474F2C];
 }
-.search-wrapper:hover {
-  @apply opacity-100 transition-opacity duration-1000;
+
+.tooltiptext {
+  z-index: 400;
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 7px;
+  position: absolute;
+}
+.qq {
+  z-index: 400;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #de994a transparent;
+}
+
+.geolocation:hover .tooltiptext {
+  @apply bg-[#DE994A] z-[400] visible;
 }
 </style>

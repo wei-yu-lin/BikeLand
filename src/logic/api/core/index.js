@@ -1,11 +1,12 @@
 import { GET } from "../requestHeaders";
 
-const defaultFilter = "ServiceStatus eq 1";
+const defaultFilter = "ServiceStatus eq 1 & $top = 10";
 
 function formatRequestUrl(url, param) {
   const { city, ...keys } = param;
   if (city) url += `/${city}`;
   if (keys.filter) keys.filter += ` and ${defaultFilter}`;
+  
   return (
     url +
     "?$format=JSON" +

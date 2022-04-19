@@ -6,15 +6,15 @@
       <i-custom-mainlogo />
     </router-link>
     <div class="flex space-x-3.5">
-      <button class="btn-white" @click="switchState = 'bicycle'">
+      <button class="btn-header" @click="switchState = 'bicycle'">
         <i-mdi-bicycle class="mr-1" />
         <span>找單車</span>
       </button>
-      <button class="btn-white" @click="switchState = 'route'">
+      <button class="btn-header" @click="switchState = 'route'">
         <i-faSolid-route class="mr-1" />
         <span>找路線</span>
       </button>
-      <button class="btn-white" @click="switchState = 'attractions'">
+      <button class="btn-header" @click="switchState = 'attractions'">
         <i-fa-umbrella class="mr-1" />
         <span>找景點</span>
       </button>
