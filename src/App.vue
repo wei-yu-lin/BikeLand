@@ -10,7 +10,6 @@ const { searchBicycle, bikeLand_Bicycle } = useBicycle();
 provide("switchState", switchState);
 provide("searchBicycle", searchBicycle);
 provide("bikeLand_Bicycle", bikeLand_Bicycle);
-
 </script>
 
-<style></style>
+

@@ -61,10 +61,12 @@
         </li>
       </ul>
     </div>
+
   </div>
 </template>
 
 <script setup>
+
 import { inject,ref } from "vue";
 const bikeLand_Bicycle = inject("bikeLand_Bicycle");
 let bicycleStateClass = ref('');

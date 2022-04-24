@@ -1,4 +1,4 @@
-import { ref, reactive, computed } from "vue";
+import { ref, reactive } from "vue";
 import { getAvailability, getStation } from "@/logic/api/core";
 
 const switchState = ref("");
